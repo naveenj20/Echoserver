@@ -27,36 +27,38 @@ Serving the HTML pages.
 Testing the webserver
 
 ## PROGRAM:
+server:
 ```
-from http.server import HTTPServer,BaseHTTPRequestHandler
-
-content='''
-<!doctype html>
-<html>
-<head>
-<title> My Web Server</title>
-</head>
-<body>
-<h1>Top Five Web Application Development Frameworks</h1>
-<h2>1.Django</h2>
-<h2>2. MEAN Stack</h2>
-<h2>3. React </h2>
-</body>
-</html>
-
-
-class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
-        self.end_headers()
-        self.wfile.write(content.encode())
-
-print("This is my webserver") 
-server_address =('keerthi',2323)
-httpd = HTTPServer(server_address,MyServer)
-httpd.serve_forever()
+import socket
+HOST = '127.0.0.1' 
+PORT = 65432 
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen()
+    print(f"Server started. Listening on {HOST}:{PORT}...")
+    conn, addr = s.accept()
+    with conn:
+        print(f"Connected by {addr}")
+        while True:
+            data = conn.recv(1024)
+            if not data:
+                break
+                conn.sendall(data)
+```
+client:                
+```
+import socket
+HOST = '127.0.0.1' 
+PORT = 65432
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+    while True:
+        message = input("Enter message (or 'exit' to quit): ")
+        if message.lower() == 'exit':
+            break
+        s.sendall(message.encode())
+        data = s.recv(1024)
+        print(f"Echo from server: {data.decode()}")
 ```
 ##  Architecture Diagram
 
@@ -86,9 +88,9 @@ httpd.serve_forever()
 
 
 ## OUTPUT:
-### CLIENT OUTPUT:
+<img width="1919" height="1125" alt="Screenshot 2025-08-10 234542" src="<img width="1859" height="877" alt="image" src="https://github.com/user-attachments/assets/298da560-95a0-4e59-83fe-0456b2f3bdcb" />
+" />
 
-### SERVER OUTPUT:
 
 ## RESULT:
 The program is executed succesfully
