@@ -88,8 +88,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
 
 ## OUTPUT:
-<img width="1919" height="1125" alt="Screenshot 2025-08-10 234542" src="<img width="1859" height="877" alt="image" src="https://github.com/user-attachments/assets/298da560-95a0-4e59-83fe-0456b2f3bdcb" />
-" />
+<img width="1919" height="1125" src="https://github.com/user-attachments/assets/6cdaf4f1-ee2e-416d-9db9-36b85a09014e" />
+
 
 
 ## RESULT:
