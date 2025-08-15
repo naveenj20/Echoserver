@@ -90,7 +90,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 ## OUTPUT:
 <img width="1919" height="1125" src="https://github.com/user-attachments/assets/6cdaf4f1-ee2e-416d-9db9-36b85a09014e" />
 
+## CLIENT OUTPUT
+<img width="395" height="90" alt="Screenshot 2025-08-15 195111" src="https://github.com/user-attachments/assets/88dff878-fd92-4a47-a7e7-675b7242367b" />
+
+## SERVER OUTPUT:
+<img width="389" height="84" alt="Screenshot 2025-08-15 195107" src="https://github.com/user-attachments/assets/a42406f4-49ee-49a7-b10c-9318dac1eacc" />
 
 
 ## RESULT:
-The program is executed succesfully
+The program is executed succesfully.
